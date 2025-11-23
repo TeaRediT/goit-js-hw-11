@@ -16,7 +16,10 @@ const createMarkup = el => {
   } = el;
 
   return `<li class="gallery-item">
-          <a class="img-link" href="${largeImageURL}"><img class="img" src=${webformatURL} alt=${tags}/></a>
+          <a class="img-link" href="${largeImageURL}"><img class="img" src="${webformatURL}" alt="${tags
+    .split(',')
+    .slice(0, 3)
+    .join(',')}"/></a>
           <ul class="img-stats-list">
             <li class="img-stats-item"><h3 class="img-stats-title">likes</h3><p class="img-stats">${likes}</p></li>
             <li class="img-stats-item"><h3 class="img-stats-title">views</h3><p class="img-stats">${views}</p></li>
@@ -26,7 +29,10 @@ const createMarkup = el => {
         </li>`;
 };
 
-export const lightbox = new SimpleLightbox('.img-link');
+export const lightbox = new SimpleLightbox('.img-link', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
 export const errorToast = mess => {
   return iziToast.show({

@@ -16,9 +16,14 @@ export const refs = {
 refs.formEl.addEventListener('submit', e => {
   e.preventDefault();
   clearGallery();
-  showLoader();
   const input = refs.inputEl.value.trim();
 
+  if (input === '') {
+    errorToast('Enter your query!');
+    return;
+  }
+
+  showLoader();
   getImagesByQuery(input)
     .then(images => {
       hideLoader();
@@ -32,8 +37,8 @@ refs.formEl.addEventListener('submit', e => {
       //images found
       createGallery(images);
     })
-    .catch(() => {
-      errorToast('ERROR');
+    .catch(err => {
+      errorToast(`ERROR: ${err}`);
     });
   refs.formEl.reset();
 });

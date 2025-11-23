@@ -46,10 +46,20 @@
   border-radius: 4px;
   line-height: 1.5;
   letter-spacing: 0.04em;
+
+  transition: border-color 250ms ease-in-out;
 }
 
 .form label input::placeholder {
   color: #808080;
+}
+
+.form label input:hover {
+  border-color: #000;
+}
+
+.form label input:focus {
+  border-color: #4e75ff;
 }
 
 .form button {
@@ -63,6 +73,13 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #fff;
+
+  transition: background-color 250ms ease-in-out;
+}
+
+.form button:hover,
+.form button:focus {
+  background-color: #6c8cff;
 }
 
 .gallery {
