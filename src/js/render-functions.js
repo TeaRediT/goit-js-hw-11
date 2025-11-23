@@ -54,9 +54,9 @@ export const clearGallery = () => {
 };
 
 export const showLoader = () => {
-  refs.listEl.insertAdjacentHTML('beforebegin', '<span class="loader"></span>');
+  refs.loaderEl.style.display = 'block';
 };
 
 export const hideLoader = () => {
-  document.querySelector('.loader').remove();
+  refs.loaderEl.style.display = 'none';
 };

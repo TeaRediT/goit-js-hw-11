@@ -11,6 +11,7 @@ export const refs = {
   formEl: document.querySelector('.form'),
   inputEl: document.querySelector("input[name='search-text']"),
   listEl: document.querySelector('.gallery'),
+  loaderEl: document.querySelector('.loader'),
 };
 
 refs.formEl.addEventListener('submit', e => {

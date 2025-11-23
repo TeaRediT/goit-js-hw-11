@@ -10,7 +10,7 @@
 
 /* Sections style */
 .loader {
-  display: block;
+  display: none;
   margin: 0 auto;
   width: 48px;
   height: 48px;
